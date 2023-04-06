@@ -77,7 +77,7 @@ if (is_android) {
   # Old target that pulls in everything. This will be going away in the future,
   # clients should depend on individual video_java etc. targets instead.
   rtc_android_library("libjingle_peerconnection_java") {
-    sources = [ "src/java/org/webrtc/Empty.java" ]
+    sources = [ "src/java/org/octonwebrtc/Empty.java" ]
 
     deps = [
       ":audio_api_java",
@@ -97,7 +97,7 @@ if (is_android) {
   }
 
   rtc_android_library("libjingle_peerconnection_metrics_default_java") {
-    sources = [ "api/org/webrtc/Metrics.java" ]
+    sources = [ "api/org/octonwebrtc/Metrics.java" ]
 
     deps = [
       ":base_java",
@@ -154,15 +154,15 @@ if (is_android) {
   # TODO(sakal): Extract files from this target to releveant subtargets, video, audio etc.
   rtc_android_library("base_java") {
     sources = [
-      "api/org/webrtc/Predicate.java",
-      "api/org/webrtc/RefCounted.java",
-      "src/java/org/webrtc/CalledByNative.java",
-      "src/java/org/webrtc/CalledByNativeUnchecked.java",
-      "src/java/org/webrtc/Histogram.java",
-      "src/java/org/webrtc/JniCommon.java",
-      "src/java/org/webrtc/JniHelper.java",
-      "src/java/org/webrtc/RefCountDelegate.java",
-      "src/java/org/webrtc/WebRtcClassLoader.java",
+      "api/org/octonwebrtc/Predicate.java",
+      "api/org/octonwebrtc/RefCounted.java",
+      "src/java/org/octonwebrtc/CalledByNative.java",
+      "src/java/org/octonwebrtc/CalledByNativeUnchecked.java",
+      "src/java/org/octonwebrtc/Histogram.java",
+      "src/java/org/octonwebrtc/JniCommon.java",
+      "src/java/org/octonwebrtc/JniHelper.java",
+      "src/java/org/octonwebrtc/RefCountDelegate.java",
+      "src/java/org/octonwebrtc/WebRtcClassLoader.java",
     ]
 
     deps = [ "//third_party/androidx:androidx_annotation_annotation_java" ]
@@ -171,9 +171,9 @@ if (is_android) {
   rtc_android_library("audio_api_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/AudioDecoderFactoryFactory.java",
-      "api/org/webrtc/AudioEncoderFactoryFactory.java",
-      "api/org/webrtc/audio/AudioDeviceModule.java",
+      "api/org/octonwebrtc/AudioDecoderFactoryFactory.java",
+      "api/org/octonwebrtc/AudioEncoderFactoryFactory.java",
+      "api/org/octonwebrtc/audio/AudioDeviceModule.java",
     ]
 
     deps = [
@@ -185,16 +185,16 @@ if (is_android) {
   rtc_android_library("video_api_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/CapturerObserver.java",
-      "api/org/webrtc/EncodedImage.java",
-      "api/org/webrtc/VideoCodecInfo.java",
-      "api/org/webrtc/VideoCodecStatus.java",
-      "api/org/webrtc/VideoDecoder.java",
-      "api/org/webrtc/VideoDecoderFactory.java",
-      "api/org/webrtc/VideoEncoder.java",
-      "api/org/webrtc/VideoEncoderFactory.java",
-      "api/org/webrtc/VideoFrame.java",
-      "api/org/webrtc/VideoSink.java",
+      "api/org/octonwebrtc/CapturerObserver.java",
+      "api/org/octonwebrtc/EncodedImage.java",
+      "api/org/octonwebrtc/VideoCodecInfo.java",
+      "api/org/octonwebrtc/VideoCodecStatus.java",
+      "api/org/octonwebrtc/VideoDecoder.java",
+      "api/org/octonwebrtc/VideoDecoderFactory.java",
+      "api/org/octonwebrtc/VideoEncoder.java",
+      "api/org/octonwebrtc/VideoEncoderFactory.java",
+      "api/org/octonwebrtc/VideoFrame.java",
+      "api/org/octonwebrtc/VideoSink.java",
     ]
 
     deps = [
@@ -208,36 +208,36 @@ if (is_android) {
   rtc_android_library("video_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/EglBase.java",
-      "api/org/webrtc/EglBase10.java",
-      "api/org/webrtc/EglBase14.java",
-      "api/org/webrtc/EglRenderer.java",
-      "api/org/webrtc/GlRectDrawer.java",
-      "api/org/webrtc/GlShader.java",
-      "api/org/webrtc/GlTextureFrameBuffer.java",
-      "api/org/webrtc/GlUtil.java",
-      "api/org/webrtc/JavaI420Buffer.java",
-      "api/org/webrtc/RendererCommon.java",
-      "api/org/webrtc/SurfaceTextureHelper.java",
-      "api/org/webrtc/TextureBufferImpl.java",
-      "api/org/webrtc/TimestampAligner.java",
-      "api/org/webrtc/VideoCapturer.java",
-      "api/org/webrtc/VideoDecoderFallback.java",
-      "api/org/webrtc/VideoEncoderFallback.java",
-      "api/org/webrtc/VideoFrameDrawer.java",
-      "api/org/webrtc/WrappedNativeVideoDecoder.java",
-      "api/org/webrtc/WrappedNativeVideoEncoder.java",
-      "api/org/webrtc/YuvConverter.java",
-      "api/org/webrtc/YuvHelper.java",
-      "src/java/org/webrtc/EglBase10Impl.java",
-      "src/java/org/webrtc/EglBase14Impl.java",
-      "src/java/org/webrtc/GlGenericDrawer.java",
-      "src/java/org/webrtc/H264Utils.java",
-      "src/java/org/webrtc/NV21Buffer.java",
-      "src/java/org/webrtc/VideoCodecMimeType.java",
-      "src/java/org/webrtc/VideoDecoderWrapper.java",
-      "src/java/org/webrtc/VideoEncoderWrapper.java",
-      "src/java/org/webrtc/WrappedNativeI420Buffer.java",
+      "api/org/octonwebrtc/EglBase.java",
+      "api/org/octonwebrtc/EglBase10.java",
+      "api/org/octonwebrtc/EglBase14.java",
+      "api/org/octonwebrtc/EglRenderer.java",
+      "api/org/octonwebrtc/GlRectDrawer.java",
+      "api/org/octonwebrtc/GlShader.java",
+      "api/org/octonwebrtc/GlTextureFrameBuffer.java",
+      "api/org/octonwebrtc/GlUtil.java",
+      "api/org/octonwebrtc/JavaI420Buffer.java",
+      "api/org/octonwebrtc/RendererCommon.java",
+      "api/org/octonwebrtc/SurfaceTextureHelper.java",
+      "api/org/octonwebrtc/TextureBufferImpl.java",
+      "api/org/octonwebrtc/TimestampAligner.java",
+      "api/org/octonwebrtc/VideoCapturer.java",
+      "api/org/octonwebrtc/VideoDecoderFallback.java",
+      "api/org/octonwebrtc/VideoEncoderFallback.java",
+      "api/org/octonwebrtc/VideoFrameDrawer.java",
+      "api/org/octonwebrtc/WrappedNativeVideoDecoder.java",
+      "api/org/octonwebrtc/WrappedNativeVideoEncoder.java",
+      "api/org/octonwebrtc/YuvConverter.java",
+      "api/org/octonwebrtc/YuvHelper.java",
+      "src/java/org/octonwebrtc/EglBase10Impl.java",
+      "src/java/org/octonwebrtc/EglBase14Impl.java",
+      "src/java/org/octonwebrtc/GlGenericDrawer.java",
+      "src/java/org/octonwebrtc/H264Utils.java",
+      "src/java/org/octonwebrtc/NV21Buffer.java",
+      "src/java/org/octonwebrtc/VideoCodecMimeType.java",
+      "src/java/org/octonwebrtc/VideoDecoderWrapper.java",
+      "src/java/org/octonwebrtc/VideoEncoderWrapper.java",
+      "src/java/org/octonwebrtc/WrappedNativeI420Buffer.java",
     ]
 
     deps = [
@@ -251,58 +251,58 @@ if (is_android) {
   rtc_android_library("peerconnection_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/AddIceObserver.java",
-      "api/org/webrtc/AudioProcessingFactory.java",
-      "api/org/webrtc/AudioSource.java",
-      "api/org/webrtc/AudioTrack.java",
-      "api/org/webrtc/CallSessionFileRotatingLogSink.java",
-      "api/org/webrtc/CandidatePairChangeEvent.java",
-      "api/org/webrtc/CryptoOptions.java",
-      "api/org/webrtc/DataChannel.java",
-      "api/org/webrtc/DtmfSender.java",
-      "api/org/webrtc/FecControllerFactoryFactoryInterface.java",
-      "api/org/webrtc/FrameDecryptor.java",
-      "api/org/webrtc/FrameEncryptor.java",
-      "api/org/webrtc/IceCandidate.java",
-      "api/org/webrtc/IceCandidateErrorEvent.java",
-      "api/org/webrtc/MediaConstraints.java",
-      "api/org/webrtc/MediaSource.java",
-      "api/org/webrtc/MediaStream.java",
-      "api/org/webrtc/MediaStreamTrack.java",
-      "api/org/webrtc/NativeLibraryLoader.java",
-      "api/org/webrtc/NativePeerConnectionFactory.java",
-      "api/org/webrtc/NetEqFactoryFactory.java",
-      "api/org/webrtc/NetworkChangeDetector.java",
-      "api/org/webrtc/NetworkChangeDetectorFactory.java",
-      "api/org/webrtc/NetworkControllerFactoryFactory.java",
+      "api/org/octonwebrtc/AddIceObserver.java",
+      "api/org/octonwebrtc/AudioProcessingFactory.java",
+      "api/org/octonwebrtc/AudioSource.java",
+      "api/org/octonwebrtc/AudioTrack.java",
+      "api/org/octonwebrtc/CallSessionFileRotatingLogSink.java",
+      "api/org/octonwebrtc/CandidatePairChangeEvent.java",
+      "api/org/octonwebrtc/CryptoOptions.java",
+      "api/org/octonwebrtc/DataChannel.java",
+      "api/org/octonwebrtc/DtmfSender.java",
+      "api/org/octonwebrtc/FecControllerFactoryFactoryInterface.java",
+      "api/org/octonwebrtc/FrameDecryptor.java",
+      "api/org/octonwebrtc/FrameEncryptor.java",
+      "api/org/octonwebrtc/IceCandidate.java",
+      "api/org/octonwebrtc/IceCandidateErrorEvent.java",
+      "api/org/octonwebrtc/MediaConstraints.java",
+      "api/org/octonwebrtc/MediaSource.java",
+      "api/org/octonwebrtc/MediaStream.java",
+      "api/org/octonwebrtc/MediaStreamTrack.java",
+      "api/org/octonwebrtc/NativeLibraryLoader.java",
+      "api/org/octonwebrtc/NativePeerConnectionFactory.java",
+      "api/org/octonwebrtc/NetEqFactoryFactory.java",
+      "api/org/octonwebrtc/NetworkChangeDetector.java",
+      "api/org/octonwebrtc/NetworkChangeDetectorFactory.java",
+      "api/org/octonwebrtc/NetworkControllerFactoryFactory.java",
 
       # TODO(sakal): Break dependencies and move to base_java.
-      "api/org/webrtc/NetworkMonitor.java",
-      "api/org/webrtc/NetworkMonitorAutoDetect.java",
-      "api/org/webrtc/NetworkStatePredictorFactoryFactory.java",
-      "api/org/webrtc/PeerConnection.java",
-      "api/org/webrtc/PeerConnectionDependencies.java",
-      "api/org/webrtc/PeerConnectionFactory.java",
-      "api/org/webrtc/RTCStats.java",
-      "api/org/webrtc/RTCStatsCollectorCallback.java",
-      "api/org/webrtc/RTCStatsReport.java",
-      "api/org/webrtc/RtcCertificatePem.java",
-      "api/org/webrtc/RtpParameters.java",
-      "api/org/webrtc/RtpReceiver.java",
-      "api/org/webrtc/RtpSender.java",
-      "api/org/webrtc/RtpTransceiver.java",
-      "api/org/webrtc/SSLCertificateVerifier.java",
-      "api/org/webrtc/SdpObserver.java",
-      "api/org/webrtc/SessionDescription.java",
-      "api/org/webrtc/StatsObserver.java",
-      "api/org/webrtc/StatsReport.java",
-      "api/org/webrtc/TurnCustomizer.java",
-      "api/org/webrtc/VideoProcessor.java",
-      "api/org/webrtc/VideoSource.java",
-      "api/org/webrtc/VideoTrack.java",
-      "src/java/org/webrtc/NativeAndroidVideoTrackSource.java",
-      "src/java/org/webrtc/NativeCapturerObserver.java",
-      "src/java/org/webrtc/NativeLibrary.java",
+      "api/org/octonwebrtc/NetworkMonitor.java",
+      "api/org/octonwebrtc/NetworkMonitorAutoDetect.java",
+      "api/org/octonwebrtc/NetworkStatePredictorFactoryFactory.java",
+      "api/org/octonwebrtc/PeerConnection.java",
+      "api/org/octonwebrtc/PeerConnectionDependencies.java",
+      "api/org/octonwebrtc/PeerConnectionFactory.java",
+      "api/org/octonwebrtc/RTCStats.java",
+      "api/org/octonwebrtc/RTCStatsCollectorCallback.java",
+      "api/org/octonwebrtc/RTCStatsReport.java",
+      "api/org/octonwebrtc/RtcCertificatePem.java",
+      "api/org/octonwebrtc/RtpParameters.java",
+      "api/org/octonwebrtc/RtpReceiver.java",
+      "api/org/octonwebrtc/RtpSender.java",
+      "api/org/octonwebrtc/RtpTransceiver.java",
+      "api/org/octonwebrtc/SSLCertificateVerifier.java",
+      "api/org/octonwebrtc/SdpObserver.java",
+      "api/org/octonwebrtc/SessionDescription.java",
+      "api/org/octonwebrtc/StatsObserver.java",
+      "api/org/octonwebrtc/StatsReport.java",
+      "api/org/octonwebrtc/TurnCustomizer.java",
+      "api/org/octonwebrtc/VideoProcessor.java",
+      "api/org/octonwebrtc/VideoSource.java",
+      "api/org/octonwebrtc/VideoTrack.java",
+      "src/java/org/octonwebrtc/NativeAndroidVideoTrackSource.java",
+      "src/java/org/octonwebrtc/NativeCapturerObserver.java",
+      "src/java/org/octonwebrtc/NativeLibrary.java",
     ]
 
     deps = [
@@ -332,17 +332,17 @@ if (is_android) {
   rtc_android_library("camera_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/Camera1Capturer.java",
-      "api/org/webrtc/Camera1Enumerator.java",
-      "api/org/webrtc/Camera2Capturer.java",
-      "api/org/webrtc/Camera2Enumerator.java",
-      "api/org/webrtc/CameraEnumerationAndroid.java",
-      "api/org/webrtc/CameraEnumerator.java",
-      "api/org/webrtc/CameraVideoCapturer.java",
-      "src/java/org/webrtc/Camera1Session.java",
-      "src/java/org/webrtc/Camera2Session.java",
-      "src/java/org/webrtc/CameraCapturer.java",
-      "src/java/org/webrtc/CameraSession.java",
+      "api/org/octonwebrtc/Camera1Capturer.java",
+      "api/org/octonwebrtc/Camera1Enumerator.java",
+      "api/org/octonwebrtc/Camera2Capturer.java",
+      "api/org/octonwebrtc/Camera2Enumerator.java",
+      "api/org/octonwebrtc/CameraEnumerationAndroid.java",
+      "api/org/octonwebrtc/CameraEnumerator.java",
+      "api/org/octonwebrtc/CameraVideoCapturer.java",
+      "src/java/org/octonwebrtc/Camera1Session.java",
+      "src/java/org/octonwebrtc/Camera2Session.java",
+      "src/java/org/octonwebrtc/CameraCapturer.java",
+      "src/java/org/octonwebrtc/CameraSession.java",
     ]
 
     deps = [
@@ -357,8 +357,8 @@ if (is_android) {
   rtc_android_library("default_video_codec_factory_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/DefaultVideoDecoderFactory.java",
-      "api/org/webrtc/DefaultVideoEncoderFactory.java",
+      "api/org/octonwebrtc/DefaultVideoDecoderFactory.java",
+      "api/org/octonwebrtc/DefaultVideoEncoderFactory.java",
     ]
 
     deps = [
@@ -373,8 +373,8 @@ if (is_android) {
   rtc_android_library("filevideo_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/FileVideoCapturer.java",
-      "api/org/webrtc/VideoFileRenderer.java",
+      "api/org/octonwebrtc/FileVideoCapturer.java",
+      "api/org/octonwebrtc/VideoFileRenderer.java",
     ]
 
     deps = [
@@ -388,21 +388,21 @@ if (is_android) {
   rtc_android_library("hwcodecs_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/HardwareVideoDecoderFactory.java",
-      "api/org/webrtc/HardwareVideoEncoderFactory.java",
-      "api/org/webrtc/PlatformSoftwareVideoDecoderFactory.java",
-      "src/java/org/webrtc/AndroidVideoDecoder.java",
-      "src/java/org/webrtc/BaseBitrateAdjuster.java",
-      "src/java/org/webrtc/BitrateAdjuster.java",
-      "src/java/org/webrtc/DynamicBitrateAdjuster.java",
-      "src/java/org/webrtc/FramerateBitrateAdjuster.java",
-      "src/java/org/webrtc/HardwareVideoEncoder.java",
-      "src/java/org/webrtc/MediaCodecUtils.java",
-      "src/java/org/webrtc/MediaCodecVideoDecoderFactory.java",
-      "src/java/org/webrtc/MediaCodecWrapper.java",
-      "src/java/org/webrtc/MediaCodecWrapperFactory.java",
-      "src/java/org/webrtc/MediaCodecWrapperFactoryImpl.java",
-      "src/java/org/webrtc/NV12Buffer.java",
+      "api/org/octonwebrtc/HardwareVideoDecoderFactory.java",
+      "api/org/octonwebrtc/HardwareVideoEncoderFactory.java",
+      "api/org/octonwebrtc/PlatformSoftwareVideoDecoderFactory.java",
+      "src/java/org/octonwebrtc/AndroidVideoDecoder.java",
+      "src/java/org/octonwebrtc/BaseBitrateAdjuster.java",
+      "src/java/org/octonwebrtc/BitrateAdjuster.java",
+      "src/java/org/octonwebrtc/DynamicBitrateAdjuster.java",
+      "src/java/org/octonwebrtc/FramerateBitrateAdjuster.java",
+      "src/java/org/octonwebrtc/HardwareVideoEncoder.java",
+      "src/java/org/octonwebrtc/MediaCodecUtils.java",
+      "src/java/org/octonwebrtc/MediaCodecVideoDecoderFactory.java",
+      "src/java/org/octonwebrtc/MediaCodecWrapper.java",
+      "src/java/org/octonwebrtc/MediaCodecWrapperFactory.java",
+      "src/java/org/octonwebrtc/MediaCodecWrapperFactoryImpl.java",
+      "src/java/org/octonwebrtc/NV12Buffer.java",
     ]
 
     deps = [
@@ -417,14 +417,14 @@ if (is_android) {
   rtc_android_library("java_audio_device_module_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/audio/JavaAudioDeviceModule.java",
-      "src/java/org/webrtc/audio/LowLatencyAudioBufferManager.java",
-      "src/java/org/webrtc/audio/VolumeLogger.java",
-      "src/java/org/webrtc/audio/WebRtcAudioEffects.java",
-      "src/java/org/webrtc/audio/WebRtcAudioManager.java",
-      "src/java/org/webrtc/audio/WebRtcAudioRecord.java",
-      "src/java/org/webrtc/audio/WebRtcAudioTrack.java",
-      "src/java/org/webrtc/audio/WebRtcAudioUtils.java",
+      "api/org/octonwebrtc/audio/JavaAudioDeviceModule.java",
+      "src/java/org/octonwebrtc/audio/LowLatencyAudioBufferManager.java",
+      "src/java/org/octonwebrtc/audio/VolumeLogger.java",
+      "src/java/org/octonwebrtc/audio/WebRtcAudioEffects.java",
+      "src/java/org/octonwebrtc/audio/WebRtcAudioManager.java",
+      "src/java/org/octonwebrtc/audio/WebRtcAudioRecord.java",
+      "src/java/org/octonwebrtc/audio/WebRtcAudioTrack.java",
+      "src/java/org/octonwebrtc/audio/WebRtcAudioUtils.java",
     ]
 
     deps = [
@@ -438,8 +438,8 @@ if (is_android) {
   rtc_android_library("builtin_audio_codecs_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/BuiltinAudioDecoderFactoryFactory.java",
-      "api/org/webrtc/BuiltinAudioEncoderFactoryFactory.java",
+      "api/org/octonwebrtc/BuiltinAudioDecoderFactoryFactory.java",
+      "api/org/octonwebrtc/BuiltinAudioEncoderFactoryFactory.java",
     ]
 
     deps = [ ":audio_api_java" ]
@@ -447,7 +447,7 @@ if (is_android) {
 
   rtc_android_library("screencapturer_java") {
     visibility = [ "*" ]
-    sources = [ "api/org/webrtc/ScreenCapturerAndroid.java" ]
+    sources = [ "api/org/octonwebrtc/ScreenCapturerAndroid.java" ]
 
     deps = [
       ":video_api_java",
@@ -460,8 +460,8 @@ if (is_android) {
   rtc_android_library("surfaceviewrenderer_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/SurfaceEglRenderer.java",
-      "api/org/webrtc/SurfaceViewRenderer.java",
+      "api/org/octonwebrtc/SurfaceEglRenderer.java",
+      "api/org/octonwebrtc/SurfaceViewRenderer.java",
     ]
 
     deps = [
@@ -475,8 +475,8 @@ if (is_android) {
   rtc_android_library("libvpx_vp8_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/LibvpxVp8Decoder.java",
-      "api/org/webrtc/LibvpxVp8Encoder.java",
+      "api/org/octonwebrtc/LibvpxVp8Decoder.java",
+      "api/org/octonwebrtc/LibvpxVp8Encoder.java",
     ]
     deps = [
       ":base_java",
@@ -489,8 +489,8 @@ if (is_android) {
   rtc_android_library("libvpx_vp9_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/LibvpxVp9Decoder.java",
-      "api/org/webrtc/LibvpxVp9Encoder.java",
+      "api/org/octonwebrtc/LibvpxVp9Decoder.java",
+      "api/org/octonwebrtc/LibvpxVp9Encoder.java",
     ]
     deps = [
       ":base_java",
@@ -502,7 +502,7 @@ if (is_android) {
 
   rtc_android_library("libaom_av1_encoder_java") {
     visibility = [ "*" ]
-    sources = [ "api/org/webrtc/LibaomAv1Encoder.java" ]
+    sources = [ "api/org/octonwebrtc/LibaomAv1Encoder.java" ]
     deps = [
       ":base_java",
       ":video_api_java",
@@ -514,8 +514,8 @@ if (is_android) {
   rtc_android_library("libaom_av1_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/LibaomAv1Decoder.java",
-      "api/org/webrtc/LibaomAv1Encoder.java",
+      "api/org/octonwebrtc/LibaomAv1Decoder.java",
+      "api/org/octonwebrtc/LibaomAv1Encoder.java",
     ]
     deps = [
       ":base_java",
@@ -527,15 +527,15 @@ if (is_android) {
 
   rtc_android_library("dav1d_java") {
     visibility = [ "*" ]
-    sources = [ "api/org/webrtc/Dav1dDecoder.java" ]
+    sources = [ "api/org/octonwebrtc/Dav1dDecoder.java" ]
     deps = [ ":video_java" ]
   }
 
   rtc_android_library("swcodecs_java") {
     visibility = [ "*" ]
     sources = [
-      "api/org/webrtc/SoftwareVideoDecoderFactory.java",
-      "api/org/webrtc/SoftwareVideoEncoderFactory.java",
+      "api/org/octonwebrtc/SoftwareVideoDecoderFactory.java",
+      "api/org/octonwebrtc/SoftwareVideoEncoderFactory.java",
     ]
 
     deps = [
@@ -1095,7 +1095,7 @@ if (current_os == "linux" || is_android) {
   ####################
 
   rtc_android_library("logging_java") {
-    sources = [ "src/java/org/webrtc/JNILogging.java" ]
+    sources = [ "src/java/org/octonwebrtc/JNILogging.java" ]
 
     deps = [
       ":base_java",
@@ -1287,7 +1287,7 @@ if (current_os == "linux" || is_android) {
   }
 
   generate_jni("generated_metrics_jni") {
-    sources = [ "api/org/webrtc/Metrics.java" ]
+    sources = [ "api/org/octonwebrtc/Metrics.java" ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
   }
@@ -1296,11 +1296,11 @@ if (current_os == "linux" || is_android) {
 
   generate_jni("generated_base_jni") {
     sources = [
-      "api/org/webrtc/NetworkChangeDetector.java",
-      "api/org/webrtc/NetworkMonitor.java",
-      "api/org/webrtc/RefCounted.java",
-      "src/java/org/webrtc/Histogram.java",
-      "src/java/org/webrtc/JniCommon.java",
+      "api/org/octonwebrtc/NetworkChangeDetector.java",
+      "api/org/octonwebrtc/NetworkMonitor.java",
+      "api/org/octonwebrtc/RefCounted.java",
+      "src/java/org/octonwebrtc/Histogram.java",
+      "src/java/org/octonwebrtc/JniCommon.java",
     ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
@@ -1308,44 +1308,44 @@ if (current_os == "linux" || is_android) {
 
   generate_jni("generated_video_jni") {
     sources = [
-      "api/org/webrtc/EncodedImage.java",
-      "api/org/webrtc/JavaI420Buffer.java",
-      "api/org/webrtc/TimestampAligner.java",
-      "api/org/webrtc/VideoCodecInfo.java",
-      "api/org/webrtc/VideoCodecStatus.java",
-      "api/org/webrtc/VideoDecoder.java",
-      "api/org/webrtc/VideoDecoderFactory.java",
-      "api/org/webrtc/VideoDecoderFallback.java",
-      "api/org/webrtc/VideoEncoder.java",
-      "api/org/webrtc/VideoEncoderFactory.java",
-      "api/org/webrtc/VideoEncoderFallback.java",
-      "api/org/webrtc/VideoFrame.java",
-      "api/org/webrtc/VideoSink.java",
-      "api/org/webrtc/VideoTrack.java",
-      "api/org/webrtc/YuvHelper.java",
-      "src/java/org/webrtc/H264Utils.java",
-      "src/java/org/webrtc/NV12Buffer.java",
-      "src/java/org/webrtc/NV21Buffer.java",
-      "src/java/org/webrtc/NativeAndroidVideoTrackSource.java",
-      "src/java/org/webrtc/NativeCapturerObserver.java",
-      "src/java/org/webrtc/VideoDecoderWrapper.java",
-      "src/java/org/webrtc/VideoEncoderWrapper.java",
-      "src/java/org/webrtc/WrappedNativeI420Buffer.java",
+      "api/org/octonwebrtc/EncodedImage.java",
+      "api/org/octonwebrtc/JavaI420Buffer.java",
+      "api/org/octonwebrtc/TimestampAligner.java",
+      "api/org/octonwebrtc/VideoCodecInfo.java",
+      "api/org/octonwebrtc/VideoCodecStatus.java",
+      "api/org/octonwebrtc/VideoDecoder.java",
+      "api/org/octonwebrtc/VideoDecoderFactory.java",
+      "api/org/octonwebrtc/VideoDecoderFallback.java",
+      "api/org/octonwebrtc/VideoEncoder.java",
+      "api/org/octonwebrtc/VideoEncoderFactory.java",
+      "api/org/octonwebrtc/VideoEncoderFallback.java",
+      "api/org/octonwebrtc/VideoFrame.java",
+      "api/org/octonwebrtc/VideoSink.java",
+      "api/org/octonwebrtc/VideoTrack.java",
+      "api/org/octonwebrtc/YuvHelper.java",
+      "src/java/org/octonwebrtc/H264Utils.java",
+      "src/java/org/octonwebrtc/NV12Buffer.java",
+      "src/java/org/octonwebrtc/NV21Buffer.java",
+      "src/java/org/octonwebrtc/NativeAndroidVideoTrackSource.java",
+      "src/java/org/octonwebrtc/NativeCapturerObserver.java",
+      "src/java/org/octonwebrtc/VideoDecoderWrapper.java",
+      "src/java/org/octonwebrtc/VideoEncoderWrapper.java",
+      "src/java/org/octonwebrtc/WrappedNativeI420Buffer.java",
     ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
   }
 
   generate_jni("generated_video_egl_jni") {
-    sources = [ "src/java/org/webrtc/EglBase10Impl.java" ]
+    sources = [ "src/java/org/octonwebrtc/EglBase10Impl.java" ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
   }
 
   generate_jni("generated_libvpx_vp8_jni") {
     sources = [
-      "api/org/webrtc/LibvpxVp8Decoder.java",
-      "api/org/webrtc/LibvpxVp8Encoder.java",
+      "api/org/octonwebrtc/LibvpxVp8Decoder.java",
+      "api/org/octonwebrtc/LibvpxVp8Encoder.java",
     ]
 
     namespace = "webrtc::jni"
@@ -1354,8 +1354,8 @@ if (current_os == "linux" || is_android) {
 
   generate_jni("generated_libvpx_vp9_jni") {
     sources = [
-      "api/org/webrtc/LibvpxVp9Decoder.java",
-      "api/org/webrtc/LibvpxVp9Encoder.java",
+      "api/org/octonwebrtc/LibvpxVp9Decoder.java",
+      "api/org/octonwebrtc/LibvpxVp9Encoder.java",
     ]
 
     namespace = "webrtc::jni"
@@ -1363,21 +1363,21 @@ if (current_os == "linux" || is_android) {
   }
 
   generate_jni("generated_libaom_av1_encoder_jni") {
-    sources = [ "api/org/webrtc/LibaomAv1Encoder.java" ]
+    sources = [ "api/org/octonwebrtc/LibaomAv1Encoder.java" ]
 
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
   }
 
   generate_jni("generated_libaom_av1_decoder_if_supported_jni") {
-    sources = [ "api/org/webrtc/LibaomAv1Decoder.java" ]
+    sources = [ "api/org/octonwebrtc/LibaomAv1Decoder.java" ]
 
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
   }
 
   generate_jni("generated_dav1d_jni") {
-    sources = [ "api/org/webrtc/Dav1dDecoder.java" ]
+    sources = [ "api/org/octonwebrtc/Dav1dDecoder.java" ]
 
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
@@ -1385,50 +1385,50 @@ if (current_os == "linux" || is_android) {
 
   generate_jni("generated_peerconnection_jni") {
     sources = [
-      "api/org/webrtc/AddIceObserver.java",
-      "api/org/webrtc/AudioTrack.java",
-      "api/org/webrtc/CallSessionFileRotatingLogSink.java",
-      "api/org/webrtc/CandidatePairChangeEvent.java",
-      "api/org/webrtc/CryptoOptions.java",
-      "api/org/webrtc/DataChannel.java",
-      "api/org/webrtc/DtmfSender.java",
-      "api/org/webrtc/IceCandidate.java",
-      "api/org/webrtc/IceCandidateErrorEvent.java",
-      "api/org/webrtc/MediaConstraints.java",
-      "api/org/webrtc/MediaSource.java",
-      "api/org/webrtc/MediaStream.java",
-      "api/org/webrtc/MediaStreamTrack.java",
-      "api/org/webrtc/PeerConnection.java",
-      "api/org/webrtc/PeerConnectionFactory.java",
-      "api/org/webrtc/RTCStats.java",
-      "api/org/webrtc/RTCStatsCollectorCallback.java",
-      "api/org/webrtc/RTCStatsReport.java",
-      "api/org/webrtc/RtcCertificatePem.java",
-      "api/org/webrtc/RtpParameters.java",
-      "api/org/webrtc/RtpReceiver.java",
-      "api/org/webrtc/RtpSender.java",
-      "api/org/webrtc/RtpTransceiver.java",
-      "api/org/webrtc/SSLCertificateVerifier.java",
-      "api/org/webrtc/SdpObserver.java",
-      "api/org/webrtc/SessionDescription.java",
-      "api/org/webrtc/StatsObserver.java",
-      "api/org/webrtc/StatsReport.java",
-      "api/org/webrtc/TurnCustomizer.java",
+      "api/org/octonwebrtc/AddIceObserver.java",
+      "api/org/octonwebrtc/AudioTrack.java",
+      "api/org/octonwebrtc/CallSessionFileRotatingLogSink.java",
+      "api/org/octonwebrtc/CandidatePairChangeEvent.java",
+      "api/org/octonwebrtc/CryptoOptions.java",
+      "api/org/octonwebrtc/DataChannel.java",
+      "api/org/octonwebrtc/DtmfSender.java",
+      "api/org/octonwebrtc/IceCandidate.java",
+      "api/org/octonwebrtc/IceCandidateErrorEvent.java",
+      "api/org/octonwebrtc/MediaConstraints.java",
+      "api/org/octonwebrtc/MediaSource.java",
+      "api/org/octonwebrtc/MediaStream.java",
+      "api/org/octonwebrtc/MediaStreamTrack.java",
+      "api/org/octonwebrtc/PeerConnection.java",
+      "api/org/octonwebrtc/PeerConnectionFactory.java",
+      "api/org/octonwebrtc/RTCStats.java",
+      "api/org/octonwebrtc/RTCStatsCollectorCallback.java",
+      "api/org/octonwebrtc/RTCStatsReport.java",
+      "api/org/octonwebrtc/RtcCertificatePem.java",
+      "api/org/octonwebrtc/RtpParameters.java",
+      "api/org/octonwebrtc/RtpReceiver.java",
+      "api/org/octonwebrtc/RtpSender.java",
+      "api/org/octonwebrtc/RtpTransceiver.java",
+      "api/org/octonwebrtc/SSLCertificateVerifier.java",
+      "api/org/octonwebrtc/SdpObserver.java",
+      "api/org/octonwebrtc/SessionDescription.java",
+      "api/org/octonwebrtc/StatsObserver.java",
+      "api/org/octonwebrtc/StatsReport.java",
+      "api/org/octonwebrtc/TurnCustomizer.java",
     ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
   }
 
   generate_jni("generated_java_audio_jni") {
-    sources = [ "api/org/webrtc/audio/JavaAudioDeviceModule.java" ]
+    sources = [ "api/org/octonwebrtc/audio/JavaAudioDeviceModule.java" ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
   }
 
   generate_jni("generated_builtin_audio_codecs_jni") {
     sources = [
-      "api/org/webrtc/BuiltinAudioDecoderFactoryFactory.java",
-      "api/org/webrtc/BuiltinAudioEncoderFactoryFactory.java",
+      "api/org/octonwebrtc/BuiltinAudioDecoderFactoryFactory.java",
+      "api/org/octonwebrtc/BuiltinAudioEncoderFactoryFactory.java",
     ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
@@ -1438,8 +1438,8 @@ if (current_os == "linux" || is_android) {
 
   generate_jni("generated_native_api_jni") {
     sources = [
-      "src/java/org/webrtc/JniHelper.java",
-      "src/java/org/webrtc/WebRtcClassLoader.java",
+      "src/java/org/octonwebrtc/JniHelper.java",
+      "src/java/org/octonwebrtc/WebRtcClassLoader.java",
     ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
@@ -1448,20 +1448,20 @@ if (current_os == "linux" || is_android) {
   # Generated JNI for internal targets.
 
   generate_jni("generated_logging_jni") {
-    sources = [ "src/java/org/webrtc/JNILogging.java" ]
+    sources = [ "src/java/org/octonwebrtc/JNILogging.java" ]
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
   }
 
   generate_jni("generated_audio_device_module_base_jni") {
-    sources = [ "src/java/org/webrtc/audio/WebRtcAudioManager.java" ]
+    sources = [ "src/java/org/octonwebrtc/audio/WebRtcAudioManager.java" ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
   }
 
   generate_jni("generated_java_audio_device_module_native_jni") {
     sources = [
-      "src/java/org/webrtc/audio/WebRtcAudioRecord.java",
-      "src/java/org/webrtc/audio/WebRtcAudioTrack.java",
+      "src/java/org/octonwebrtc/audio/WebRtcAudioRecord.java",
+      "src/java/org/octonwebrtc/audio/WebRtcAudioTrack.java",
     ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
@@ -1481,38 +1481,38 @@ if (is_android) {
       target_sdk_version = 21
 
       sources = [
-        "instrumentationtests/src/org/webrtc/AndroidVideoDecoderInstrumentationTest.java",
-        "instrumentationtests/src/org/webrtc/BuiltinAudioCodecsFactoryFactoryTest.java",
-        "instrumentationtests/src/org/webrtc/Camera1CapturerUsingByteBufferTest.java",
-        "instrumentationtests/src/org/webrtc/Camera1CapturerUsingTextureTest.java",
-        "instrumentationtests/src/org/webrtc/Camera2CapturerTest.java",
-        "instrumentationtests/src/org/webrtc/CameraVideoCapturerTestFixtures.java",
-        "instrumentationtests/src/org/webrtc/DefaultVideoEncoderFactoryTest.java",
-        "instrumentationtests/src/org/webrtc/EglRendererTest.java",
-        "instrumentationtests/src/org/webrtc/FileVideoCapturerTest.java",
-        "instrumentationtests/src/org/webrtc/GlRectDrawerTest.java",
-        "instrumentationtests/src/org/webrtc/HardwareVideoEncoderTest.java",
-        "instrumentationtests/src/org/webrtc/LoggableTest.java",
-        "instrumentationtests/src/org/webrtc/NetworkMonitorTest.java",
-        "instrumentationtests/src/org/webrtc/PeerConnectionEndToEndTest.java",
-        "instrumentationtests/src/org/webrtc/PeerConnectionFactoryTest.java",
-        "instrumentationtests/src/org/webrtc/PeerConnectionTest.java",
-        "instrumentationtests/src/org/webrtc/RendererCommonTest.java",
-        "instrumentationtests/src/org/webrtc/RtcCertificatePemTest.java",
-        "instrumentationtests/src/org/webrtc/RtpSenderTest.java",
-        "instrumentationtests/src/org/webrtc/RtpTransceiverTest.java",
-        "instrumentationtests/src/org/webrtc/SurfaceTextureHelperTest.java",
-        "instrumentationtests/src/org/webrtc/SurfaceViewRendererOnMeasureTest.java",
-        "instrumentationtests/src/org/webrtc/TestConstants.java",
-        "instrumentationtests/src/org/webrtc/TimestampAlignerTest.java",
-        "instrumentationtests/src/org/webrtc/VideoFileRendererTest.java",
-        "instrumentationtests/src/org/webrtc/VideoFrameBufferTest.java",
-        "instrumentationtests/src/org/webrtc/VideoTrackTest.java",
-        "instrumentationtests/src/org/webrtc/WebRtcJniBootTest.java",
-        "instrumentationtests/src/org/webrtc/YuvHelperTest.java",
+        "instrumentationtests/src/org/octonwebrtc/AndroidVideoDecoderInstrumentationTest.java",
+        "instrumentationtests/src/org/octonwebrtc/BuiltinAudioCodecsFactoryFactoryTest.java",
+        "instrumentationtests/src/org/octonwebrtc/Camera1CapturerUsingByteBufferTest.java",
+        "instrumentationtests/src/org/octonwebrtc/Camera1CapturerUsingTextureTest.java",
+        "instrumentationtests/src/org/octonwebrtc/Camera2CapturerTest.java",
+        "instrumentationtests/src/org/octonwebrtc/CameraVideoCapturerTestFixtures.java",
+        "instrumentationtests/src/org/octonwebrtc/DefaultVideoEncoderFactoryTest.java",
+        "instrumentationtests/src/org/octonwebrtc/EglRendererTest.java",
+        "instrumentationtests/src/org/octonwebrtc/FileVideoCapturerTest.java",
+        "instrumentationtests/src/org/octonwebrtc/GlRectDrawerTest.java",
+        "instrumentationtests/src/org/octonwebrtc/HardwareVideoEncoderTest.java",
+        "instrumentationtests/src/org/octonwebrtc/LoggableTest.java",
+        "instrumentationtests/src/org/octonwebrtc/NetworkMonitorTest.java",
+        "instrumentationtests/src/org/octonwebrtc/PeerConnectionEndToEndTest.java",
+        "instrumentationtests/src/org/octonwebrtc/PeerConnectionFactoryTest.java",
+        "instrumentationtests/src/org/octonwebrtc/PeerConnectionTest.java",
+        "instrumentationtests/src/org/octonwebrtc/RendererCommonTest.java",
+        "instrumentationtests/src/org/octonwebrtc/RtcCertificatePemTest.java",
+        "instrumentationtests/src/org/octonwebrtc/RtpSenderTest.java",
+        "instrumentationtests/src/org/octonwebrtc/RtpTransceiverTest.java",
+        "instrumentationtests/src/org/octonwebrtc/SurfaceTextureHelperTest.java",
+        "instrumentationtests/src/org/octonwebrtc/SurfaceViewRendererOnMeasureTest.java",
+        "instrumentationtests/src/org/octonwebrtc/TestConstants.java",
+        "instrumentationtests/src/org/octonwebrtc/TimestampAlignerTest.java",
+        "instrumentationtests/src/org/octonwebrtc/VideoFileRendererTest.java",
+        "instrumentationtests/src/org/octonwebrtc/VideoFrameBufferTest.java",
+        "instrumentationtests/src/org/octonwebrtc/VideoTrackTest.java",
+        "instrumentationtests/src/org/octonwebrtc/WebRtcJniBootTest.java",
+        "instrumentationtests/src/org/octonwebrtc/YuvHelperTest.java",
       ]
 
-      data = [ "../../sdk/android/instrumentationtests/src/org/webrtc/capturetestvideo.y4m" ]
+      data = [ "../../sdk/android/instrumentationtests/src/org/octonwebrtc/capturetestvideo.y4m" ]
 
       deps = [
         ":audio_api_java",
@@ -1675,13 +1675,13 @@ if (is_android) {
     testonly = true
 
     sources = [
-      "native_unittests/org/webrtc/ApplicationContextProvider.java",
-      "native_unittests/org/webrtc/BuildInfo.java",
-      "native_unittests/org/webrtc/CodecsWrapperTestHelper.java",
-      "native_unittests/org/webrtc/FakeVideoEncoder.java",
-      "native_unittests/org/webrtc/JavaTypesTestHelper.java",
-      "native_unittests/org/webrtc/JavaVideoSourceTestHelper.java",
-      "native_unittests/org/webrtc/PeerConnectionFactoryInitializationHelper.java",
+      "native_unittests/org/octonwebrtc/ApplicationContextProvider.java",
+      "native_unittests/org/octonwebrtc/BuildInfo.java",
+      "native_unittests/org/octonwebrtc/CodecsWrapperTestHelper.java",
+      "native_unittests/org/octonwebrtc/FakeVideoEncoder.java",
+      "native_unittests/org/octonwebrtc/JavaTypesTestHelper.java",
+      "native_unittests/org/octonwebrtc/JavaVideoSourceTestHelper.java",
+      "native_unittests/org/octonwebrtc/PeerConnectionFactoryInitializationHelper.java",
     ]
 
     deps = [
@@ -1700,12 +1700,12 @@ if (is_android) {
     testonly = true
 
     sources = [
-      "native_unittests/org/webrtc/ApplicationContextProvider.java",
-      "native_unittests/org/webrtc/BuildInfo.java",
-      "native_unittests/org/webrtc/CodecsWrapperTestHelper.java",
-      "native_unittests/org/webrtc/JavaTypesTestHelper.java",
-      "native_unittests/org/webrtc/JavaVideoSourceTestHelper.java",
-      "native_unittests/org/webrtc/PeerConnectionFactoryInitializationHelper.java",
+      "native_unittests/org/octonwebrtc/ApplicationContextProvider.java",
+      "native_unittests/org/octonwebrtc/BuildInfo.java",
+      "native_unittests/org/octonwebrtc/CodecsWrapperTestHelper.java",
+      "native_unittests/org/octonwebrtc/JavaTypesTestHelper.java",
+      "native_unittests/org/octonwebrtc/JavaVideoSourceTestHelper.java",
+      "native_unittests/org/octonwebrtc/PeerConnectionFactoryInitializationHelper.java",
     ]
     namespace = "webrtc::jni"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
@@ -1713,18 +1713,18 @@ if (is_android) {
 
   robolectric_binary("android_sdk_junit_tests") {
     sources = [
-      "tests/src/org/webrtc/AndroidVideoDecoderTest.java",
-      "tests/src/org/webrtc/CameraEnumerationTest.java",
-      "tests/src/org/webrtc/CodecTestHelper.java",
-      "tests/src/org/webrtc/CryptoOptionsTest.java",
-      "tests/src/org/webrtc/FakeMediaCodecWrapper.java",
-      "tests/src/org/webrtc/FramerateBitrateAdjusterTest.java",
-      "tests/src/org/webrtc/GlGenericDrawerTest.java",
-      "tests/src/org/webrtc/HardwareVideoEncoderTest.java",
-      "tests/src/org/webrtc/IceCandidateTest.java",
-      "tests/src/org/webrtc/RefCountDelegateTest.java",
-      "tests/src/org/webrtc/ScalingSettingsTest.java",
-      "tests/src/org/webrtc/audio/LowLatencyAudioBufferManagerTest.java",
+      "tests/src/org/octonwebrtc/AndroidVideoDecoderTest.java",
+      "tests/src/org/octonwebrtc/CameraEnumerationTest.java",
+      "tests/src/org/octonwebrtc/CodecTestHelper.java",
+      "tests/src/org/octonwebrtc/CryptoOptionsTest.java",
+      "tests/src/org/octonwebrtc/FakeMediaCodecWrapper.java",
+      "tests/src/org/octonwebrtc/FramerateBitrateAdjusterTest.java",
+      "tests/src/org/octonwebrtc/GlGenericDrawerTest.java",
+      "tests/src/org/octonwebrtc/HardwareVideoEncoderTest.java",
+      "tests/src/org/octonwebrtc/IceCandidateTest.java",
+      "tests/src/org/octonwebrtc/RefCountDelegateTest.java",
+      "tests/src/org/octonwebrtc/ScalingSettingsTest.java",
+      "tests/src/org/octonwebrtc/audio/LowLatencyAudioBufferManagerTest.java",
     ]
 
     deps = [

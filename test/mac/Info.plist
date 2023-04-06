@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>org.webrtc.video_loopback</string>
+	<string>org.octonwebrtc.video_loopback</string>
 	<key>CFBundleName</key>
 	<string>video_loopback</string>
 	<key>CFBundlePackageType</key>

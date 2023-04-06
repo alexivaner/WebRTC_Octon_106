@@ -8,22 +8,22 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-package org.webrtc.examples.androidnativeapi;
+package org.octonwebrtc.examples.androidnativeapi;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.widget.Button;
 import androidx.annotation.Nullable;
-import org.webrtc.Camera1Enumerator;
-import org.webrtc.Camera2Enumerator;
-import org.webrtc.CameraEnumerator;
-import org.webrtc.ContextUtils;
-import org.webrtc.EglBase;
-import org.webrtc.GlRectDrawer;
-import org.webrtc.SurfaceTextureHelper;
-import org.webrtc.SurfaceViewRenderer;
-import org.webrtc.VideoCapturer;
+import org.octonwebrtc.Camera1Enumerator;
+import org.octonwebrtc.Camera2Enumerator;
+import org.octonwebrtc.CameraEnumerator;
+import org.octonwebrtc.ContextUtils;
+import org.octonwebrtc.EglBase;
+import org.octonwebrtc.GlRectDrawer;
+import org.octonwebrtc.SurfaceTextureHelper;
+import org.octonwebrtc.SurfaceViewRenderer;
+import org.octonwebrtc.VideoCapturer;
 
 public class MainActivity extends Activity {
   private @Nullable CallClient callClient;

@@ -20,7 +20,7 @@ import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import org.webrtc.RendererCommon.ScalingType;
+import org.octonwebrtc.RendererCommon.ScalingType;
 
 /**
  * Fragment for call control.

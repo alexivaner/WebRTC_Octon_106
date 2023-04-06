@@ -479,12 +479,12 @@ if (rtc_include_tests && !build_with_chromium) {
 if (!build_with_chromium && is_android) {
   rtc_android_library("audio_device_java") {
     sources = [
-      "android/java/src/org/webrtc/voiceengine/BuildInfo.java",
-      "android/java/src/org/webrtc/voiceengine/WebRtcAudioEffects.java",
-      "android/java/src/org/webrtc/voiceengine/WebRtcAudioManager.java",
-      "android/java/src/org/webrtc/voiceengine/WebRtcAudioRecord.java",
-      "android/java/src/org/webrtc/voiceengine/WebRtcAudioTrack.java",
-      "android/java/src/org/webrtc/voiceengine/WebRtcAudioUtils.java",
+      "android/java/src/org/octonwebrtc/voiceengine/BuildInfo.java",
+      "android/java/src/org/octonwebrtc/voiceengine/WebRtcAudioEffects.java",
+      "android/java/src/org/octonwebrtc/voiceengine/WebRtcAudioManager.java",
+      "android/java/src/org/octonwebrtc/voiceengine/WebRtcAudioRecord.java",
+      "android/java/src/org/octonwebrtc/voiceengine/WebRtcAudioTrack.java",
+      "android/java/src/org/octonwebrtc/voiceengine/WebRtcAudioUtils.java",
     ]
     deps = [
       "../../rtc_base:base_java",

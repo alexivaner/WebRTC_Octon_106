@@ -528,7 +528,7 @@ class RTC_EXPORT Network {
   // PORTALLOCATOR_DISABLE_COSTLY_NETWORKS. Once in Port::Construct() (and when
   // Port::OnNetworkTypeChanged is called).
   ABSL_DEPRECATED(
-      "Use the version with field trials, see bugs.webrtc.org/webrtc:10335")
+      "Use the version with field trials, see bugs.webrtc.org/octonwebrtc:10335")
   uint16_t GetCost(const webrtc::FieldTrialsView* field_trials = nullptr) const;
   uint16_t GetCost(const webrtc::FieldTrialsView& field_trials) const;
 

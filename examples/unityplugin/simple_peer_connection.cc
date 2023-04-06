@@ -208,9 +208,9 @@ void SimplePeerConnection::DeletePeerConnection() {
   if (g_camera) {
     JNIEnv* env = webrtc::jni::GetEnv();
     jclass pc_factory_class =
-        unity_plugin::FindClass(env, "org/webrtc/UnityUtility");
+        unity_plugin::FindClass(env, "org/octonwebrtc/UnityUtility");
     jmethodID stop_camera_method = webrtc::GetStaticMethodID(
-        env, pc_factory_class, "StopCamera", "(Lorg/webrtc/VideoCapturer;)V");
+        env, pc_factory_class, "StopCamera", "(Lorg/octonwebrtc/VideoCapturer;)V");
 
     env->CallStaticVoidMethod(pc_factory_class, stop_camera_method, g_camera);
     CHECK_EXCEPTION(env);
@@ -435,10 +435,10 @@ void SimplePeerConnection::AddStreams(bool audio_only) {
 #if defined(WEBRTC_ANDROID)
     JNIEnv* env = webrtc::jni::GetEnv();
     jclass pc_factory_class =
-        unity_plugin::FindClass(env, "org/webrtc/UnityUtility");
+        unity_plugin::FindClass(env, "org/octonwebrtc/UnityUtility");
     jmethodID load_texture_helper_method = webrtc::GetStaticMethodID(
         env, pc_factory_class, "LoadSurfaceTextureHelper",
-        "()Lorg/webrtc/SurfaceTextureHelper;");
+        "()Lorg/octonwebrtc/SurfaceTextureHelper;");
     jobject texture_helper = env->CallStaticObjectMethod(
         pc_factory_class, load_texture_helper_method);
     CHECK_EXCEPTION(env);
@@ -452,7 +452,7 @@ void SimplePeerConnection::AddStreams(bool audio_only) {
     // link with VideoCapturer (Camera);
     jmethodID link_camera_method = webrtc::GetStaticMethodID(
         env, pc_factory_class, "LinkCamera",
-        "(JLorg/webrtc/SurfaceTextureHelper;)Lorg/webrtc/VideoCapturer;");
+        "(JLorg/octonwebrtc/SurfaceTextureHelper;)Lorg/octonwebrtc/VideoCapturer;");
     jobject camera_tmp =
         env->CallStaticObjectMethod(pc_factory_class, link_camera_method,
                                     (jlong)source.get(), texture_helper);

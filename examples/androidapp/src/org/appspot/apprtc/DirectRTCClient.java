@@ -20,8 +20,8 @@ import java.util.regex.Pattern;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.webrtc.IceCandidate;
-import org.webrtc.SessionDescription;
+import org.octonwebrtc.IceCandidate;
+import org.octonwebrtc.SessionDescription;
 
 /**
  * Implementation of AppRTCClient that uses direct TCP connection as the signaling channel.

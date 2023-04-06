@@ -23,7 +23,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.concurrent.ExecutorService;
-import org.webrtc.ThreadUtils;
+import org.octonwebrtc.ThreadUtils;
 
 /**
  * Replacement for WebSocketChannelClient for direct communication between two IP addresses. Handles

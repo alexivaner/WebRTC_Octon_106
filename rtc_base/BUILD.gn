@@ -1807,11 +1807,11 @@ if (is_android) {
   rtc_android_library("base_java") {
     visibility = [ "*" ]
     sources = [
-      "java/src/org/webrtc/ContextUtils.java",
-      "java/src/org/webrtc/Loggable.java",
-      "java/src/org/webrtc/Logging.java",
-      "java/src/org/webrtc/Size.java",
-      "java/src/org/webrtc/ThreadUtils.java",
+      "java/src/org/octonwebrtc/ContextUtils.java",
+      "java/src/org/octonwebrtc/Loggable.java",
+      "java/src/org/octonwebrtc/Logging.java",
+      "java/src/org/octonwebrtc/Size.java",
+      "java/src/org/octonwebrtc/ThreadUtils.java",
     ]
     deps = [ "//third_party/androidx:androidx_annotation_annotation_java" ]
   }

@@ -26,8 +26,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
-import org.webrtc.IceCandidate;
-import org.webrtc.SessionDescription;
+import org.octonwebrtc.IceCandidate;
+import org.octonwebrtc.SessionDescription;
 
 /**
  * Test for DirectRTCClient. Test is very simple and only tests the overall sanity of the class

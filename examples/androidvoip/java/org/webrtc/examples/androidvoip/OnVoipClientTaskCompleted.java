@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-package org.webrtc.examples.androidvoip;
+package org.octonwebrtc.examples.androidvoip;
 
 import java.util.List;
 

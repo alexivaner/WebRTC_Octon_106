@@ -19,7 +19,7 @@ import android.os.Build;
 import android.util.Log;
 import androidx.annotation.Nullable;
 import org.appspot.apprtc.util.AppRTCUtils;
-import org.webrtc.ThreadUtils;
+import org.octonwebrtc.ThreadUtils;
 
 /**
  * AppRTCProximitySensor manages functions related to the proximity sensor in
