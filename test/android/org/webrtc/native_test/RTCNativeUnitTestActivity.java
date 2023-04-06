@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-package org.webrtc.native_test;
+package org.imediawebrtc.native_test;
 
 import android.app.Activity;
 import android.os.Bundle;

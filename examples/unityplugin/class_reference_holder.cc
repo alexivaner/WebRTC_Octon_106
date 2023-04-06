@@ -47,7 +47,7 @@ void FreeGlobalClassReferenceHolder() {
 }
 
 ClassReferenceHolder::ClassReferenceHolder(JNIEnv* jni) {
-  LoadClass(jni, "org/webrtc/UnityUtility");
+  LoadClass(jni, "org/imediawebrtc/UnityUtility");
 }
 
 ClassReferenceHolder::~ClassReferenceHolder() {

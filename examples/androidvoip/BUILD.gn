@@ -17,9 +17,9 @@ if (is_android) {
     target_sdk_version = 31
 
     sources = [
-      "java/org/webrtc/examples/androidvoip/MainActivity.java",
-      "java/org/webrtc/examples/androidvoip/OnVoipClientTaskCompleted.java",
-      "java/org/webrtc/examples/androidvoip/VoipClient.java",
+      "java/org/imediawebrtc/examples/androidvoip/MainActivity.java",
+      "java/org/imediawebrtc/examples/androidvoip/OnVoipClientTaskCompleted.java",
+      "java/org/imediawebrtc/examples/androidvoip/VoipClient.java",
     ]
 
     deps = [
@@ -38,7 +38,7 @@ if (is_android) {
 
   generate_jni("generated_jni") {
     testonly = true
-    sources = [ "java/org/webrtc/examples/androidvoip/VoipClient.java" ]
+    sources = [ "java/org/imediawebrtc/examples/androidvoip/VoipClient.java" ]
     namespace = "webrtc_examples"
     jni_generator_include = "//sdk/android/src/jni/jni_generator_helper.h"
   }
@@ -78,7 +78,7 @@ if (is_android) {
 
   android_resources("resources") {
     testonly = true
-    custom_package = "org.webrtc.examples.androidvoip"
+    custom_package = "org.imediawebrtc.examples.androidvoip"
     sources = [
       "res/layout/activity_main.xml",
       "res/values/colors.xml",

@@ -24,9 +24,9 @@ import org.appspot.apprtc.util.AsyncHttpURLConnection.AsyncHttpEvents;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.webrtc.IceCandidate;
-import org.webrtc.PeerConnection;
-import org.webrtc.SessionDescription;
+import org.imediawebrtc.IceCandidate;
+import org.imediawebrtc.PeerConnection;
+import org.imediawebrtc.SessionDescription;
 
 /**
  * AsyncTask that converts an AppRTC room URL into the set of signaling

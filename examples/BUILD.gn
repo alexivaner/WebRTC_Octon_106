@@ -879,7 +879,7 @@ if (is_win || is_android) {
 
 if (is_android) {
   rtc_android_library("webrtc_unity_java") {
-    sources = [ "unityplugin/java/src/org/webrtc/UnityUtility.java" ]
+    sources = [ "unityplugin/java/src/org/imediawebrtc/UnityUtility.java" ]
     deps = [
       "../rtc_base:base_java",
       "../sdk/android:camera_java",

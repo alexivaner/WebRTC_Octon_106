@@ -8,7 +8,7 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-package org.webrtc;
+package org.imediawebrtc;
 
 import android.content.Context;
 import androidx.annotation.Nullable;
